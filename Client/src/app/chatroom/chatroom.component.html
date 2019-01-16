@@ -1,0 +1,27 @@
+<div class="container">
+  <header>
+    <h1>Let's talk? </h1>
+    <button (click)="clearChats()" id="clear">Clear</button>
+  </header>
+  <div id="status">{{statusMessage}}</div>
+  <main>
+    <!-- <input type="text" placeholder="UserName" id="username"> -->
+    <section id="chat-container">
+        <div *ngFor="let message of allMessages" id="messages">
+            <div class="message-block">
+                <div class="user">{{message.name + ':  '}}</div>
+                <div class="user-message">{{message.message}}</div>
+            </div>  
+          </div>
+    </section>
+
+    <br>
+    <section id="action-area">
+        <textarea name="textarea" #textarea cols="100" placeholder="Your message"></textarea>
+        <button id="post" (click)="postMessage(textarea.value)">Post</button>
+    </section>
+    
+
+
+  </main>
+</div>
